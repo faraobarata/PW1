@@ -139,7 +139,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👨‍💻 Autor
 
-Seu Nome - [GitHub](https://github.com/seu-usuario)
+Seu Nome - [GitHub](https://github.com/faraobarata)
 
 ---
 
