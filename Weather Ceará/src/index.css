@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+#root {
+    @apply min-h-screen w-full relative;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color-scheme: light dark;
+  }
+
+  select option {
+    @apply bg-white dark:bg-gray-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 
+           hover:from-blue-600 hover:to-purple-600 text-white rounded-xl 
+           transition-all duration-300 shadow-lg hover:shadow-xl 
+           transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-800/50 text-white rounded-xl 
+           hover:bg-gray-800/70 transition-all duration-300 
+           backdrop-blur-sm border border-white/10;
+  }
+  
+  .input-search {
+    @apply w-full px-6 py-4 glass-input rounded-2xl text-white 
+           placeholder-blue-200/70 focus:outline-none focus:ring-2 
+           focus:ring-white/20;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl 
+    bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm
+    text-gray-900 dark:text-gray-100
+    focus:outline-none focus:ring-2 focus:ring-primary/50 dark:focus:ring-primary/50 focus:border-primary dark:focus:border-primary
+    placeholder-gray-400 dark:placeholder-gray-500 
+    shadow-sm hover:shadow transition-all duration-200;
+  }
+
+  .select-primary {
+    @apply pr-10 cursor-pointer hover:border-gray-300 dark:hover:border-gray-600;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3e%3c/path%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+
+  .select-primary option {
+    @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 py-2 px-3 cursor-pointer;
+  }
+
+  .card {
+    @apply glass-card rounded-2xl shadow-lg hover:shadow-xl 
+           transition-all duration-300 transform hover:scale-[1.02];
+  }
+}
+
+@layer utilities {
+  .animate-gradient-slow {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  .animate-gradient-xy {
+    animation: gradient-xy 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes gradient-xy {
+    0% {
+      background-position: 0% 0%;
+      transform: rotate(0deg);
+    }
+    50% {
+      background-position: 100% 100%;
+      transform: rotate(180deg);
+    }
+    100% {
+      background-position: 0% 0%;
+      transform: rotate(360deg);
+    }
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-input {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 
+           focus:border-white/40 focus:bg-white/20 transition-all duration-300;
+  }
+}
+
+/* Scrollbar refinada */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full hover:bg-gray-600 transition-colors;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.reserve-button {
+  margin-top: 1rem;
+}
+
+.car-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.car-form label {
+  margin-bottom: 0.5rem;
+}
+
+.car-form input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.car-form button {
+  padding: 0.5rem 1rem;
+}
+
+/* Animações de fundo */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
